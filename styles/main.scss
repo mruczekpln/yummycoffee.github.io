@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    width: 100vw;
+    height: 8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    &-title {
+        width: 100%;
+        max-width: 15rem;
+        background-color: green;
+    }
+
+    &-links {
+        width: 50rem;
+
+        display: flex;
+        justify-content: space-between;
+
+        list-style-type: none;
+    }
+}
+
+.divider {
+    width: 100vw;
+    height: 10rem;
+
+    display: grid;
+    place-items: center;
+
+    background-color: hotpink;
+}
+
+.section-content {
+    width: 100vw;
+    height: 100vh;
+
+    background-color: grey;
+}
