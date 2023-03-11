@@ -1,41 +1,84 @@
-const typewriterSpan = document.getElementById("typewriter")
+const projects = document.getElementById('projects-container')
+console.log(projects.clientWidth)
+let clientStart,
+	finalDelta = 0,
+	lastDeltaPercentage = 0
 
-const texts = ["yummycoffee", "student", "programmer"]
-const speed = 100; 
-const delayBetweenStringEdit = 1000;
-let letters = ""
+const onMove = e => {
+	if (clientStart === 0) return
 
-// javascript "sleep()" tricks
-const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
+	const clientDelta = clientStart - e.clientX
+	const deltaPercentage = (clientDelta / (projects.clientWidth / 2)) * -100
+	const newDeltaPercentage = deltaPercentage + lastDeltaPercentage
+	finalDelta = Math.max(Math.min(newDeltaPercentage, 0), -100)
 
-// main lifecycle
-const type = async () => {
+	const transform = `translateX(${finalDelta}%)`
+	projects.animate(
+		{
+			transform: transform
+		},
+		{ duration: 1200, fill: 'forwards' }
+	)
 
-    for (let text of texts) {
-        letters = ""
+	for (const image of projects.getElementsByClassName('image')) {
+		image.animate(
+			{
+				objectPosition: `${100 + finalDelta * 1.2}% center`
+			},
+			{ duration: 1200, fill: 'forwards' }
+		)
+	}
 
-        for (let letter of text) {
-            letters += letter
-            
-            typewriterSpan.innerHTML = letters
-            
-            await sleep(speed)
-        }
-        
-        await sleep(delayBetweenStringEdit)
-        
-        for (let letter in letters) {
-            letters = letters.slice(0, letters.length - 1)
-            
-            typewriterSpan.innerHTML = letters
-            
-            await sleep(speed)
-        }
-
-        await sleep(delayBetweenStringEdit)
-    }
-
-    type()
+	// console.log(e)
+	console.log(finalDelta, deltaPercentage, clientDelta)
 }
 
-type()
+projects.addEventListener('mousedown', e => {
+	console.log('mounted', e.clientX)
+	clientStart = e.clientX
+
+	projects.addEventListener('mousemove', onMove)
+})
+
+window.addEventListener('mouseup', e => {
+	clientStart = 0
+	console.log(finalDelta)
+
+	if (finalDelta < -80) {
+		console.log('going back')
+		finalDelta = 0
+
+		const transform = `translateX(${finalDelta}%)`
+		projects.animate(
+			{
+				transform: transform
+			},
+			{ duration: 1200, easing: 'ease-in-out', fill: 'forwards' }
+		)
+	}
+
+	lastDeltaPercentage = finalDelta
+	console.log('demounted', lastDeltaPercentage)
+})
+
+const loader = document.getElementById('loader')
+const loaderContent = document.getElementById('loader-content')
+const main = document.querySelector('main')
+
+let i = 0
+const interval = setInterval(() => {
+	i++
+	loaderContent.textContent = `${i}%`
+
+	if (i === 100) clearInterval(interval)
+}, 50)
+
+setTimeout(() => {
+	loader.style.opacity = 1
+	loader.style.transition = 'opacity 1s ease-out'
+}, 1000)
+
+setTimeout(() => {
+	loader.style.opacity = 0
+	main.style.opacity = 1
+}, 5500)

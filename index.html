@@ -1,71 +1,149 @@
 <!DOCTYPE html>
-<html lang="pl-PL">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>yummycoffee portfolio page</title>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css">
-</head>
-<body>
-    <nav class="navbar">
-        <h1 class="navbar-title">hi! im <span id="typewriter"></span></h1>
-        <div class="navbar-links">
-            <a href="#" class="link">about()</a>
-            <a href="#" class="link">school()</a>
-            <a href="#" class="link">hobbies()</a>
-            <a href="#" class="link">work()</a>
-            <a href="#" class="link">contact()</a>
-        </div>
-    </nav>
+		<link rel="stylesheet" href="./styles/index.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
 
-    <section class="about">
-        <div class="divider">
-            <h1 class="divider-title">about(<span>up</span>)</h1>
-        </div>
+		<script src="app.js" defer></script>
+	</head>
 
-        <div class="about-content section-content">
-            
-        </div>
-    </section>
-    
-    <section class="school">
-        <div class="divider">
-            <h1 class="divider-title">school(<span>up</span>)</h1>
-        </div>
+	<body>
+		<div id="loader"><p id="loader-content"></p></div>
 
-        <div class="school-content section-content">
+		<main>
+			<section id="about">
+				<div id="about-title" class="title">
+					<h1>hi, im leon</h1>
+					<p id="title-leading">frontend junior dev</p>
+				</div>
 
-        </div>
-    </section>
-    
-    <section class="hobbies">
-        <div class="divider">
-            <h1 class="divider-title">hobbies(<span>up</span>)</h1>
-        </div>
+				<div id="about-container">
+					<p id="about-me">
+						<span style="color: gold">16</span>
+						<br />
+						based in
+						<img src="./public/pl.png" alt="pl" />
+						<br />
+						<br />
+						discovering boundaries of creativity. spending free time dreaming in code, hanging out with homies,
+						listening to
+						<b>yungadisz.</b>
+						i've got lots of other skills and hobbies like street dancing, billiards, mtbiking. currently learning and
+						looking forward to begin a programming / IT intership. focusing on frontend solutions with
+						<span style="color: aquamarine">react</span>
+						and many modern frontend tools
+					</p>
+				</div>
+			</section>
 
-        <div class="hobbies-content section-content">
+			<hr />
 
-        </div>
-    </section>
-    
-    <section class="work">
-        <div class="divider">
-            <h1 class="divider-title">work(<span>up</span>)</h1>
-        </div>
+			<section id="projects">
+				<!-- <h1 id="section-title">projects</h1> -->
 
-        <div class="work-content section-content">
+				<div id="projects-container" draggable="false">
+					<div class="project" id="projects-info">drag --></div>
+					<div class="project" draggable="false">
+						<div class="project-container" draggable="false">
+							<img
+								class="image"
+								src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+								draggable="false"
+							/>
+						</div>
+					</div>
 
-        </div>
-    </section>
+					<div class="project" draggable="false">
+						<div class="project-container" draggable="false">
+							<img
+								class="image"
+								src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+								draggable="false"
+							/>
+						</div>
+					</div>
 
-    <section class="contact">
+					<div class="project" draggable="false">
+						<div class="project-container" draggable="false">
+							<img
+								class="image"
+								src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+								draggable="false"
+							/>
+						</div>
+					</div>
+				</div>
+			</section>
 
-    </section>
+			<hr />
 
-    <script src="app.js"></script>
-</body>
+			<section id="skills">
+				<div class="title">
+					<h1>perks</h1>
+					<p class="title-leading">xp buzzin'</p>
+				</div>
+
+				<div id="skills-container">
+					<div class="skill">
+						<i class="devicon-html5-plain colored"></i>
+						<p style="color: red">html</p>
+					</div>
+					<div class="skill">
+						<i class="devicon-css3-plain colored"></i>
+						<p style="color: blue">css</p>
+					</div>
+					<div class="skill">
+						<i class="devicon-javascript-plain colored"></i>
+						<p style="color: yellow">js</p>
+					</div>
+					<div class="skill">
+						<i class="devicon-typescript-plain colored"></i>
+						<p style="color: dodgerblue">typescript</p>
+					</div>
+					<div class="skill">
+						<i class="devicon-sass-original colored"></i>
+						<p style="color: crimson">sass</p>
+					</div>
+					<div class="skill">
+						<i class="devicon-tailwindcss-plain colored"></i>
+						<p style="color: lightblue">tailwindcss</p>
+					</div>
+					<div class="skill">
+						<i class="devicon-php-plain colored"></i>
+						<p style="color: cadetblue">php</p>
+					</div>
+					<div class="skill">
+						<i class="devicon-mysql-plain-wordmark colored"></i>
+						<p style="color: aquamarine">mysql</p>
+					</div>
+					<div class="skill">
+						<i class="devicon-react-original colored"></i>
+						<p style="color: cyan">react</p>
+					</div>
+					<div class="skill">
+						<img
+							style="filter: saturate(0%)"
+							src="https://static-00.iconduck.com/assets.00/react-router-icon-512x279-zswz065s.png"
+							alt="rr"
+						/>
+						<p>react-router</p>
+					</div>
+					<div class="skill">
+						<i class="devicon-mongodb-plain-wordmark colored"></i>
+						<p style="color: green">mongodb</p>
+					</div>
+					<div class="skill">
+						<i class="devicon-express-original colored"></i>
+						<p>express</p>
+					</div>
+				</div>
+			</section>
+
+			<footer>all rights to krazlyapparel at krazlyy.pl</footer>
+		</main>
+	</body>
 </html>
