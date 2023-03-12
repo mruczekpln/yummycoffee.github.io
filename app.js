@@ -23,14 +23,14 @@ const onMove = e => {
 	for (const image of projects.getElementsByClassName('image')) {
 		image.animate(
 			{
-				objectPosition: `${100 + finalDelta * 1.2}% center`
+				objectPosition: `${100 + finalDelta}% center`
 			},
 			{ duration: 1200, fill: 'forwards' }
 		)
 	}
 
 	// console.log(e)
-	console.log(finalDelta, deltaPercentage, clientDelta)
+	// console.log(finalDelta, deltaPercentage, clientDelta)
 }
 
 projects.addEventListener('mousedown', e => {
@@ -42,7 +42,7 @@ projects.addEventListener('mousedown', e => {
 
 window.addEventListener('mouseup', e => {
 	clientStart = 0
-	console.log(finalDelta)
+	// console.log(finalDelta)
 
 	if (finalDelta < -80) {
 		console.log('going back')
@@ -60,25 +60,3 @@ window.addEventListener('mouseup', e => {
 	lastDeltaPercentage = finalDelta
 	console.log('demounted', lastDeltaPercentage)
 })
-
-const loader = document.getElementById('loader')
-const loaderContent = document.getElementById('loader-content')
-const main = document.querySelector('main')
-
-let i = 0
-const interval = setInterval(() => {
-	i++
-	loaderContent.textContent = `${i}%`
-
-	if (i === 100) clearInterval(interval)
-}, 50)
-
-setTimeout(() => {
-	loader.style.opacity = 1
-	loader.style.transition = 'opacity 1s ease-out'
-}, 1000)
-
-setTimeout(() => {
-	loader.style.opacity = 0
-	main.style.opacity = 1
-}, 5500)

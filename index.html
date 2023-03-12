@@ -9,16 +9,21 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
 
 		<script src="app.js" defer></script>
+		<script src="loading.js" defer></script>
+		<script src="cursor.js" defer></script>
+		<script src="header.js" defer></script>
 	</head>
 
 	<body>
-		<div id="loader"><p id="loader-content"></p></div>
+		<div id="loader">
+			<p id="loader-content"></p>
+		</div>
 
 		<main>
 			<section id="about">
 				<div id="about-title" class="title">
 					<h1>hi, im leon</h1>
-					<p id="title-leading">frontend junior dev</p>
+					<p id="title-leading"></p>
 				</div>
 
 				<div id="about-container">
@@ -46,14 +51,10 @@
 				<!-- <h1 id="section-title">projects</h1> -->
 
 				<div id="projects-container" draggable="false">
-					<div class="project" id="projects-info">drag --></div>
-					<div class="project" draggable="false">
-						<div class="project-container" draggable="false">
-							<img
-								class="image"
-								src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-								draggable="false"
-							/>
+					<div class="project" id="projects-info">
+						<div id="info">
+							<h1>my works</h1>
+							<p id="info-animation">drag</p>
 						</div>
 					</div>
 
@@ -64,6 +65,8 @@
 								src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
 								draggable="false"
 							/>
+							<div class="project-title">no data</div>
+							<p class="project-info">click to see more</p>
 						</div>
 					</div>
 
@@ -74,6 +77,20 @@
 								src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
 								draggable="false"
 							/>
+							<div class="project-title">no data</div>
+							<p class="project-info">click to see more</p>
+						</div>
+					</div>
+
+					<div class="project" draggable="false">
+						<div class="project-container" draggable="false">
+							<img
+								class="image"
+								src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+								draggable="false"
+							/>
+							<div class="project-title">no data</div>
+							<p class="project-info">click to see more</p>
 						</div>
 					</div>
 				</div>
@@ -82,10 +99,10 @@
 			<hr />
 
 			<section id="skills">
-				<div class="title">
+				<!-- <div class="title">
 					<h1>perks</h1>
 					<p class="title-leading">xp buzzin'</p>
-				</div>
+				</div> -->
 
 				<div id="skills-container">
 					<div class="skill">
@@ -143,7 +160,7 @@
 				</div>
 			</section>
 
-			<footer>all rights to krazlyapparel at krazlyy.pl</footer>
+			<footer>all rights to krazlyapparel at krazlyy.pl, lets make smth big together: leonwdev@gmail.com</footer>
 		</main>
 	</body>
 </html>
