@@ -11,6 +11,8 @@ body {
 	line-height: normal;
 	overflow-y: scroll;
 
+	cursor: none;
+
 	background-color: #080705;
 	// background-color: #40434e;
 }
@@ -39,6 +41,21 @@ body {
 	main section {
 		width: 80%;
 	}
+}
+
+#cursor {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+
+	// background-color: #f8a100;
+	background-color: transparent;
+	backdrop-filter: invert(100%);
+	border-radius: 100%;
+
+	pointer-events: none;
+
+	z-index: 1000;
 }
 
 main {
@@ -127,7 +144,7 @@ main {
 
 	#projects {
 		width: 100vw;
-		height: 200vh;
+		height: 100vh;
 		// overflow-x: scroll;
 
 		// left: 50%;
@@ -301,6 +318,31 @@ main {
 	footer {
 		position: absolute;
 		bottom: 0;
+		left: 0;
+
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+
+		transition: 0.5s;
+
+		#show-footer {
+			width: 50px;
+			height: 50px;
+
+			z-index: 50;
+
+			border: none;
+
+			cursor: none;
+		}
+
+		#footer-content {
+			position: relative;
+			right: 1200px;
+
+			transition: right 0.5s;
+		}
 	}
 }
 

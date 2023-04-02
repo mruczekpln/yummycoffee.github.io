@@ -15,6 +15,7 @@ body {
   height: 100vh;
   line-height: normal;
   overflow-y: scroll;
+  cursor: none;
   background-color: #080705;
 }
 
@@ -38,6 +39,17 @@ body {
     width: 80%;
   }
 }
+#cursor {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  backdrop-filter: invert(100%);
+  border-radius: 100%;
+  pointer-events: none;
+  z-index: 1000;
+}
+
 main {
   opacity: 0;
   transition: opacity 1s ease-in;
@@ -94,7 +106,7 @@ main section {
 }
 main #projects {
   width: 100vw;
-  height: 200vh;
+  height: 100vh;
   position: relative;
 }
 main #projects button {
@@ -212,6 +224,23 @@ main #skills-container .skill img {
 main footer {
   position: absolute;
   bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  transition: 0.5s;
+}
+main footer #show-footer {
+  width: 50px;
+  height: 50px;
+  z-index: 50;
+  border: none;
+  cursor: none;
+}
+main footer #footer-content {
+  position: relative;
+  right: 1200px;
+  transition: right 0.5s;
 }
 
 @keyframes drag {
